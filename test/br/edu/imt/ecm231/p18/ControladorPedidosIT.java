@@ -1,0 +1,1 @@
+package br.edu.imt.ecm231.p18; public class ControladorPedidosIT { public static void executar(){ControladorPedidos c1=new ControladorPedidos();c1.criarPedido("P10",100);Teste.assertTrue(c1.pagarPedido("P10",100),"pagamentoExato");ControladorPedidos c2=new ControladorPedidos();c2.criarPedido("P11",100);Teste.assertFalse(c2.pagarPedido("P11",99.99),"pagamentoInsuficiente");} }

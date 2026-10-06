@@ -1,0 +1,2 @@
+package br.edu.imt.ecm231.p18;
+import java.util.*; public class ControladorPedidos { private final Map<String,Pedido> pedidos=new HashMap<>(); private final ServicoPagamento servico=new ServicoPagamento(); public void criarPedido(String id,double valor){if(pedidos.containsKey(id))throw new IllegalArgumentException("Pedido já existe");pedidos.put(id,new Pedido(id,valor));} public Pedido getPedido(String id){return pedidos.get(id);} public boolean pagarPedido(String id,double recebido){Pedido p=pedidos.get(id);return p!=null&&servico.processarPagamento(p,recebido);} }
